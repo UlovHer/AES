@@ -4,11 +4,11 @@
 warning('off','all')
 
 % sbox lookup table. Indexing is (input+1)
-sbox_vector = csvread('sbox.csv');
+sbox_vector = csvread('./box/sbox.csv');
 sbox_table = transpose(reshape(sbox_vector(1:256), [16,16]));
 
 % inv_sbox lookup table. Indexing is (input+1)
-inv_sbox_vector = csvread('inv_sbox.csv');
+inv_sbox_vector = csvread('./box/inv_sbox.csv');
 inv_sbox_table = reshape(inv_sbox_vector(1:256), [16,16]);
 set_global(sbox_table, inv_sbox_table)
 
